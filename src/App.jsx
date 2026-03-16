@@ -1,6 +1,5 @@
-import './App.css'
-
 function App() {
+    const { todos, addTodo, toggleTodo, deleteTodo } = useTodos()
     return <></>
 }
 
