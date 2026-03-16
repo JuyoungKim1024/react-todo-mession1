@@ -1,6 +1,5 @@
-function App() {
-    const { todos, addTodo, toggleTodo, deleteTodo } = useTodos()
-    return <></>
-}
+import TodoApp from './components/TodoApp'
 
-export default App
+export default function App() {
+    return <TodoApp />
+}

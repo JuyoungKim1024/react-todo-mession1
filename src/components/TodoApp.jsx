@@ -1,0 +1,47 @@
+import { useState } from 'react'
+import TodoList from './TodoList'
+import TodoWriteForm from './TodoWriteForm'
+
+export default function TodoApp() {
+    const [todos, setTodos] = useState([])
+    const [input, setInput] = useState('')
+    const [editId, setEditId] = useState(null)
+
+    const changeInput = (e) => {
+        setInput(e.target.value)
+    }
+
+    const addTodo = (e) => {
+        e.preventDefault()
+
+        if (!input.trim()) return
+
+        if (editId) {
+            setTodos(todos.map((todo) => (todo.id === editId ? { ...todo, text: input } : todo)))
+            setEditId(null)
+        } else {
+            setTodos([...todos, { id: Date.now(), text: input }])
+        }
+
+        setInput('')
+    }
+
+    const deleteTodo = (id) => {
+        setTodos(todos.filter((todo) => todo.id !== id))
+    }
+
+    const editTodo = (todo) => {
+        setInput(todo.text)
+        setEditId(todo.id)
+    }
+
+    return (
+        <div>
+            <h1>Todo App</h1>
+
+            <TodoWriteForm input={input} changeInput={changeInput} addTodo={addTodo} editId={editId} />
+
+            <TodoList todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} />
+        </div>
+    )
+}
