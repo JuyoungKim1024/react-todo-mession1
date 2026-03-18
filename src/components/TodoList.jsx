@@ -1,6 +1,6 @@
 export default function TodoList({ todos, deleteTodo, editTodo }) {
     return (
-        <ul>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
             {todos.map((todo, index) => (
                 <li key={todo.id}>
                     {index + 1}. {todo.text}
