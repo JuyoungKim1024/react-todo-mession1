@@ -20,7 +20,7 @@ export default function TodoApp() {
             setTodos(todos.map((todo) => (todo.id === editId ? { ...todo, text: input } : todo)))
             setEditId(null)
         } else {
-            setTodos([...todos, { id: Date.now(), text: input }])
+            setTodos([...todos, { id: Date.now(), text: input, completed: false }])
         }
 
         setInput('')
@@ -35,13 +35,17 @@ export default function TodoApp() {
         setEditId(todo.id)
     }
 
+    const toggleTodo = (id) => {
+        setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)))
+    }
+
     return (
         <div>
             <h1>Todo App</h1>
 
             <TodoWriteForm input={input} changeInput={changeInput} addTodo={addTodo} editId={editId} />
 
-            <TodoList todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} />
+            <TodoList todos={todos} deleteTodo={deleteTodo} editTodo={editTodo} toggleTodo={toggleTodo} />
         </div>
     )
 }
