@@ -14,14 +14,11 @@ export default function TodoApp() {
     const addTodo = (e) => {
         e.preventDefault()
 
-        if (!input.trim()) return
-
-        if (editId) {
-            setTodos(todos.map((todo) => (todo.id === editId ? { ...todo, text: input } : todo)))
-            setEditId(null)
-        } else {
-            setTodos([...todos, { id: Date.now(), text: input, completed: false }])
+        if (!input.trim()) {
+            alert('할 일을 입력하세요')
+            return
         }
+        setTodos([...todos, { id: Date.now(), text: input, completed: false }])
 
         setInput('')
     }
