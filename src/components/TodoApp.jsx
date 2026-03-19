@@ -40,7 +40,7 @@ export default function TodoApp() {
     }
 
     return (
-        <div>
+        <div className="container">
             <h1>Todo App</h1>
 
             <TodoWriteForm input={input} changeInput={changeInput} addTodo={addTodo} editId={editId} />

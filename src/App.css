@@ -1,0 +1,114 @@
+body {
+    background-color: #f0fdf4;
+    font-family: sans-serif;
+}
+
+/* 컨테이너 */
+.container {
+    width: 420px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 */
+h1 {
+    text-align: center;
+    color: #16a34a;
+}
+
+/* 입력 영역 */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* input이랑 버튼 간격 */
+    margin-bottom: 20px;
+}
+
+input[type='text'] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* 버튼 */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+/* 추가/수정 버튼 */
+form button {
+    background-color: #22c55e;
+}
+
+form button:hover {
+    background-color: #16a34a;
+}
+
+/* 리스트 */
+ul {
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* 핵심: li 정렬 */
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+/* 체크박스 */
+li input[type='checkbox'] {
+    cursor: pointer;
+}
+
+/* 텍스트 */
+li span {
+    flex: 1; /* 👉 핵심: 버튼 밀어내기 */
+    text-align: left; /* 👉 텍스트 왼쪽 정렬 */
+}
+
+/* 완료 상태 */
+.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+/* 수정 버튼 */
+.edit-btn {
+    background-color: #22c55e;
+}
+
+.edit-btn:hover {
+    background-color: #16a34a;
+}
+
+/* 삭제 버튼 */
+.delete-btn {
+    background-color: #ef4444;
+    text-align: left;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+.btn-group {
+    display: flex;
+    margin-left: auto;
+}
